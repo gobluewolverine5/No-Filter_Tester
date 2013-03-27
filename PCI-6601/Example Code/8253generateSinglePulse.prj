@@ -1,0 +1,168 @@
+[Project Header]
+Version = 550
+Platform Code = 4
+Pathname = "/e/MeasurementStudio/cvi/samples/daq/ctr/8253generateSinglePulse.prj"
+CVI Dir = "/e/measurementstudio/cvi"
+VXIplug&play Framework Dir = "/C/VXIPNP/win95"
+Number of Files = 3
+Sort Type = "No Sort"
+Target Type = "Executable"
+Build Configuration = "Debug"
+Warn User If Debugging Release = 1
+Flags = 16
+Drag Bar Left = 139
+Window Top = 23
+Window Left = 0
+Window Bottom = 223
+Window Right = 500
+
+[File 0001]
+File Type = "CSource"
+Path = "/e/MeasurementStudio/cvi/toolslib/daqutil/NIDAQEX.C"
+Res Id = 1
+Exclude = False
+Disk Date = 3020080348
+Project Flags = 0
+Compile Into Object File = False
+Object Format = "Win32-MSVC"
+ForceCompile_Debug = False
+ForceCompile_Release = True
+Window Top = 40
+Window Left = 40
+Window Height = 0
+Window Width = 0
+Source Window State = "1,0,0,0,0,0,0,0,0,65,0,0,0,0,0,18,0,0,13,5,"
+Header Dependencies = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,"
+
+[File 0002]
+File Type = "Include"
+Path = "/e/MeasurementStudio/cvi/toolslib/daqutil/NIDAQEX.H"
+Res Id = 2
+Exclude = False
+Disk Date = 3020080348
+Project Flags = 0
+Window Top = 40
+Window Left = 40
+Window Height = 0
+Window Width = 0
+Source Window State = "1,0,0,0,0,0,0,0,0,65,0,0,0,0,0,18,0,0,13,5,"
+
+[File 0003]
+File Type = "CSource"
+Path = "/e/MeasurementStudio/cvi/samples/daq/ctr/8253generateSinglePulse.c"
+Res Id = 3
+Exclude = False
+Disk Date = 3020074546
+Project Flags = 0
+Compile Into Object File = False
+Object Format = "Win32-MSVC"
+ForceCompile_Debug = False
+ForceCompile_Release = True
+Window Top = 80
+Window Left = 80
+Window Height = 0
+Window Width = 0
+Source Window State = "1,6,7,6,1,51,1,0,3,65,0,0,0,0,0,18,0,0,7,52,"
+Header Dependencies = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,"
+
+[SCC Options]
+Use global settings = True
+SCC Provider = ""
+SCC Project = ""
+Perform Same Action For .h File As For .uir File = "Ask"
+Comment = ""
+Use Default Comment = False
+Do Not Include PRJ File in Actions = True
+Suppress CVI Error Messages = False
+
+[Compiler Options]
+Default Calling Convention = "cdecl"
+Max Number Of Errors = 10
+Require Prototypes = True
+Require Return Values = True
+Enable Pointer Mismatch Warning = False
+Enable Unreachable Code Warning = False
+Track Include File Dependencies = True
+Prompt For Missing Includes = True
+Stop On First Error File = False
+Bring Up Err Win For Warnings = True
+Show Build Dialog = False
+
+[Run Options]
+Stack Size = 250000
+Debugging Level = "Standard"
+Save Changes Before Running = "Ask"
+Break On Library Errors = False
+Break On First Chance Exceptions = False
+Hide Windows = True
+Break At First Statement = False
+
+[Compiler Defines]
+Compiler Defines = "_CVI_=301"
+
+[Command Line Args]
+Command Line Args = ""
+
+[Included Headers]
+Header 0001 = "/e/MeasurementStudio/cvi/toolslib/daqutil/NIDAQEX.H"
+Header 0002 = "/e/MeasurementStudio/cvi/include/ansi_c.h"
+Header 0003 = "/e/MeasurementStudio/cvi/include/ansi/assert.h"
+Header 0004 = "/e/MeasurementStudio/cvi/include/cvidef.h"
+Header 0005 = "/e/MeasurementStudio/cvi/include/cvirte.h"
+Header 0006 = "/e/MeasurementStudio/cvi/include/ansi/ctype.h"
+Header 0007 = "/e/MeasurementStudio/cvi/include/ansi/errno.h"
+Header 0008 = "/e/MeasurementStudio/cvi/include/ansi/float.h"
+Header 0009 = "/e/MeasurementStudio/cvi/include/ansi/limits.h"
+Header 0010 = "/e/MeasurementStudio/cvi/include/ansi/locale.h"
+Header 0011 = "/e/MeasurementStudio/cvi/include/ansi/math.h"
+Header 0012 = "/e/MeasurementStudio/cvi/include/ansi/setjmp.h"
+Header 0013 = "/e/MeasurementStudio/cvi/include/ansi/signal.h"
+Header 0014 = "/e/MeasurementStudio/cvi/include/ansi/stdarg.h"
+Header 0015 = "/e/MeasurementStudio/cvi/include/ansi/stddef.h"
+Header 0016 = "/e/MeasurementStudio/cvi/include/ansi/stdio.h"
+Header 0017 = "/e/MeasurementStudio/cvi/include/ansi/stdlib.h"
+Header 0018 = "/e/MeasurementStudio/cvi/include/ansi/string.h"
+Header 0019 = "/e/MeasurementStudio/cvi/include/ansi/time.h"
+Header 0020 = "/e/MeasurementStudio/cvi/include/utility.h"
+Header 0021 = "/e/MeasurementStudio/cvi/include/userint.h"
+Header 0022 = "/e/MeasurementStudio/cvi/include/dataacq.h"
+Header 0023 = "/e/MeasurementStudio/cvi/include/nidaqerr.h"
+Header 0024 = "/e/MeasurementStudio/cvi/include/OLDERROR.H"
+Header 0025 = "/e/MeasurementStudio/cvi/include/nidaqcns.h"
+Header 0026 = "/e/MeasurementStudio/cvi/include/regdefs.h"
+Max Header Number = 26
+
+[Create Executable]
+Executable File_Debug = ""
+Target Creation Date_Debug = 0
+Force Creation of Target_Debug = False
+Executable File_Release = ""
+Target Creation Date_Release = 0
+Force Creation of Target_Release = False
+Icon File = ""
+Application Title = ""
+DLL Exports = "Include File Symbols"
+DLL Import Library Choice = "Gen Lib For Current Mode"
+Use VXIPNP Subdirectories for Import Libraries = False
+Use Dflt Import Lib Base Name = True
+Where to Copy DLL = "Do not copy"
+Add Type Lib To DLL = False
+Include Type Lib Help Links = False
+Type Lib FP File = ""
+Type Lib Guid = ""
+Uses DataSocket = 0
+Uses NIReports = 0
+Uses DCom95 = 0
+Instrument Driver Support Only = False
+
+[External Compiler Support]
+UIR Callbacks File Option = 0
+Using LoadExternalModule = False
+Create Project Symbols File = True
+UIR Callbacks Obj File = ""
+Project Symbols H File = ""
+Project Symbols Obj File = ""
+
+[DLL Debugging Support]
+External Process Path = ""
+

@@ -1,0 +1,160 @@
+C51 COMPILER V8.02   PC_51                                                                 01/14/2011 13:58:11 PAGE 1   
+
+
+C51 COMPILER V8.02, COMPILATION OF MODULE PC_51
+OBJECT MODULE PLACED IN PC-51.OBJ
+COMPILER INVOKED BY: D:\Program Files\keil\C51\BIN\C51.EXE PC-51.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          # pragma db code
+   2          # include<reg51.h>
+   3          # define uchar unsigned char
+   4          void rece(void);
+   5          void init(void);
+   6          uchar re[17];
+   7          /*主程序*/
+   8          void main(void)
+   9          { 
+  10   1      uchar temp;
+  11   1      init();
+  12   1      do{
+  13   2         while(RI==0);
+  14   2         temp=SBUF;
+  15   2         if(temp==0x00)
+  16   2          {rece();}
+  17   2         else break; 
+  18   2        }while(1);    
+  19   1      }
+  20          /*串口初始化*/
+  21          void init(void)
+  22          {
+  23   1      TMOD=0x20;           //定时器1--方式2 
+  24   1      PCON=0x80;           //电源控制
+  25   1      SCON=0x50;           //方式1
+  26   1      TL1=0xFA;             
+  27   1      TH1=0xFA;            //22.1184MHz晶振，波特率为4800 0xf3   9600 0xfa   19200 0xfd 
+  28   1      TR1=1;               //Timer1开始计数
+  29   1      }
+  30          /*接收返回数据*/
+  31          void rece(void)
+  32          {
+  33   1      char i;
+  34   1      i=0;
+  35   1      do{while(RI==0);
+  36   2        re[i]=SBUF;
+  37   2        RI=0;
+  38   2        SBUF=re[i];
+  39   2        while(TI==0);
+  40   2        TI=0;
+  41   2        i++; 
+  42   2        }while(re[i-1]!=255);
+  43   1      }
+C51 COMPILER V8.02   PC_51                                                                 01/14/2011 13:58:11 PAGE 2   
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+
+             ; FUNCTION main (BEGIN)
+                                           ; SOURCE LINE # 8
+                                           ; SOURCE LINE # 9
+                                           ; SOURCE LINE # 11
+0000 120000      R     LCALL   init
+                                           ; SOURCE LINE # 12
+0003         ?C0004:
+                                           ; SOURCE LINE # 13
+0003 3098FD            JNB     RI,?C0004
+0006         ?C0005:
+                                           ; SOURCE LINE # 14
+;---- Variable 'temp' assigned to Register 'R7' ----
+0006 AF99              MOV     R7,SBUF
+                                           ; SOURCE LINE # 15
+0008 EF                MOV     A,R7
+0009 7005              JNZ     ?C0008
+                                           ; SOURCE LINE # 16
+000B 120000      R     LCALL   rece
+000E 80F3              SJMP    ?C0004
+                                           ; SOURCE LINE # 17
+                                           ; SOURCE LINE # 18
+                                           ; SOURCE LINE # 19
+0010         ?C0008:
+0010 22                RET     
+             ; FUNCTION main (END)
+
+             ; FUNCTION init (BEGIN)
+                                           ; SOURCE LINE # 21
+                                           ; SOURCE LINE # 22
+                                           ; SOURCE LINE # 23
+0000 758920            MOV     TMOD,#020H
+                                           ; SOURCE LINE # 24
+0003 758780            MOV     PCON,#080H
+                                           ; SOURCE LINE # 25
+0006 759850            MOV     SCON,#050H
+                                           ; SOURCE LINE # 26
+0009 758BFA            MOV     TL1,#0FAH
+                                           ; SOURCE LINE # 27
+000C 758DFA            MOV     TH1,#0FAH
+                                           ; SOURCE LINE # 28
+000F D28E              SETB    TR1
+                                           ; SOURCE LINE # 29
+0011 22                RET     
+             ; FUNCTION init (END)
+
+             ; FUNCTION rece (BEGIN)
+                                           ; SOURCE LINE # 31
+                                           ; SOURCE LINE # 32
+                                           ; SOURCE LINE # 34
+;---- Variable 'i' assigned to Register 'R7' ----
+0000 E4                CLR     A
+0001 FF                MOV     R7,A
+                                           ; SOURCE LINE # 35
+0002         ?C0013:
+0002 3098FD            JNB     RI,?C0013
+0005         ?C0014:
+                                           ; SOURCE LINE # 36
+0005 7400        R     MOV     A,#LOW re
+0007 2F                ADD     A,R7
+C51 COMPILER V8.02   PC_51                                                                 01/14/2011 13:58:11 PAGE 3   
+
+0008 F8                MOV     R0,A
+0009 A699              MOV     @R0,SBUF
+                                           ; SOURCE LINE # 37
+000B C298              CLR     RI
+                                           ; SOURCE LINE # 38
+000D 7400        R     MOV     A,#LOW re
+000F 2F                ADD     A,R7
+0010 F8                MOV     R0,A
+0011 E6                MOV     A,@R0
+0012 F599              MOV     SBUF,A
+0014         ?C0015:
+                                           ; SOURCE LINE # 39
+0014 3099FD            JNB     TI,?C0015
+0017         ?C0016:
+                                           ; SOURCE LINE # 40
+0017 C299              CLR     TI
+                                           ; SOURCE LINE # 41
+0019 0F                INC     R7
+                                           ; SOURCE LINE # 42
+001A 7400        R     MOV     A,#LOW re+0FFFFH
+001C 2F                ADD     A,R7
+001D F8                MOV     R0,A
+001E E6                MOV     A,@R0
+001F B4FFE0            CJNE    A,#0FFH,?C0013
+                                           ; SOURCE LINE # 43
+0022 22                RET     
+             ; FUNCTION rece (END)
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     70    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     17    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
